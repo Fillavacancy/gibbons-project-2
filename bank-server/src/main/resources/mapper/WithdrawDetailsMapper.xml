@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gibbons.bank.mapper.WithdrawDetailsMapper" >
+  <resultMap id="BaseResultMap" type="com.gibbons.bank.entity.WithdrawDetails" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="withdraw_time" property="withdrawTime" jdbcType="TIMESTAMP" />
+    <result column="withdraw_amount" property="withdrawAmount" jdbcType="DECIMAL" />
+    <result column="account_over" property="accountOver" jdbcType="DECIMAL" />
+    <result column="withdraw_account_id" property="withdrawAccountId" jdbcType="INTEGER" />
+    <result column="withdraw_type" property="withdrawType" jdbcType="VARCHAR" />
+    <result column="withdraw_bank_type" property="withdrawBankType" jdbcType="VARCHAR" />
+    <result column="withdraw_bank_card_number" property="withdrawBankCardNumber" jdbcType="VARCHAR" />
+    <result column="withdraw_summary" property="withdrawSummary" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+  </resultMap>
+</mapper>

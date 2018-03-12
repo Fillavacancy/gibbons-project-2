@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.gibbons</groupId>
+    <artifactId>gibbons-project</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>gibbons-project</name>
+    <description>Demo project for Spring Boot</description>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.10.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Edgware.SR1</spring-cloud.version>
+        <mysql-version>5.1.44</mysql-version>
+        <druid-version>1.0.11</druid-version>
+        <mapper-spring-boot-starter-version>1.1.5</mapper-spring-boot-starter-version>
+        <pagehelper-spring-boot-starter-version>1.2.3</pagehelper-spring-boot-starter-version>
+        <mapper.version>3.4.0</mapper.version>
+        <fastjson-version>1.2.44</fastjson-version>
+        <commons-lang3-version>3.3.2</commons-lang3-version>
+        <commons-io-version>1.3.2</commons-io-version>
+        <tk.mybatis-version>3.4.0</tk.mybatis-version>
+        <pagehelper-version>5.0.3</pagehelper-version>
+        <joda-time-version>2.9.5</joda-time-version>
+        <jjwt-version>0.9.0</jjwt-version>
+        <junit-version>4.11</junit-version>
+        <mockito-core-version>1.10.19</mockito-core-version>
+        <springfox-swagger-ui-version>2.7.0</springfox-swagger-ui-version>
+        <springfox-swagger2-version>2.7.0</springfox-swagger2-version>
+        <swagger-bootstrap-ui-version>1.6</swagger-bootstrap-ui-version>
+    </properties>
+
+    <modules>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson-version}</version>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <encoding>UTF-8</encoding><!-- 过滤后缀为pem、pfx的证书文件 -->
+                    <nonFilteredFileExtensions>
+                        <nonFilteredFileExtension>pem</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>pfx</nonFilteredFileExtension>
+                    </nonFilteredFileExtensions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

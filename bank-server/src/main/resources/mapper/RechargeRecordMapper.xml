@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gibbons.bank.mapper.RechargeRecordMapper" >
+  <resultMap id="BaseResultMap" type="com.gibbons.bank.entity.RechargeRecord" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="recharge_time" property="rechargeTime" jdbcType="TIMESTAMP" />
+    <result column="recharge_number" property="rechargeNumber" jdbcType="VARCHAR" />
+    <result column="recharge_amount" property="rechargeAmount" jdbcType="DECIMAL" />
+    <result column="account_over" property="accountOver" jdbcType="DECIMAL" />
+    <result column="recharge_bank_type" property="rechargeBankType" jdbcType="VARCHAR" />
+    <result column="recharge_bank_card_number" property="rechargeBankCardNumber" jdbcType="VARCHAR" />
+    <result column="recharge_account_id" property="rechargeAccountId" jdbcType="INTEGER" />
+    <result column="be_recharge_account_id" property="beRechargeAccountId" jdbcType="INTEGER" />
+    <result column="summary" property="summary" jdbcType="VARCHAR" />
+  </resultMap>
+</mapper>

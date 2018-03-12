@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: construction-server
+
+management:
+  security:
+    enabled: false
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://user:password@192.168.0.17:9000/eureka/

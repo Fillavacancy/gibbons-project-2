@@ -1,0 +1,65 @@
+server:
+  port: 9002
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${server.port}
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 15
+  client:
+    healthcheck:
+      enabled: true
+
+zuul:
+  ignored-services: "*"
+  sensitive-headers:
+  prefix: /api #为zuul设置一个公共的前缀
+  routes:
+    auth-server:
+      path: /auth/**
+    admin-server:
+      path: /admin/**
+    member-server:
+      path: /member/**
+    information-server:
+      path: /info/**
+
+
+hystrix:
+  threadpool:
+    default:
+      coreSize: 1000 #并发执行的最大线程数，默认10
+      maxQueueSize: 1000 #BlockingQueue的最大队列数
+      queueSizeRejectionThreshold: 500 #即使maxQueueSize没有达到，达到queueSizeRejectionThreshold该值后，请求也会被拒绝
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 110000
+          strategy: SEMAPHORE
+
+ribbon:
+  eureka:
+    enabled: true
+  ReadTimeout: 120000
+  ConnectTimeout: 120000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  OkToRetryOnAllOperations: false
+
+gate:
+  ignore:
+    startWith: /static,/auth/jwt
+
+auth:
+  serviceId: auth-server
+  user:
+    token-header: Authorization
+    pub-key:
+        path: ../gibbons-project/common-server/src/main/resources/jwt/pub.key
+  client:
+    token-header: client-token
+    id: auth-server  #不填则默认读取spring.application.name
+    secret: 123456

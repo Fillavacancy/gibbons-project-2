@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gibbons.bank.mapper.TradingWaterMapper" >
+  <resultMap id="BaseResultMap" type="com.gibbons.bank.entity.TradingWater" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="water_number" property="waterNumber" jdbcType="VARCHAR" />
+    <result column="account_id" property="accountId" jdbcType="INTEGER" />
+    <result column="bank_type" property="bankType" jdbcType="VARCHAR" />
+    <result column="bank_card_number" property="bankCardNumber" jdbcType="VARCHAR" />
+    <result column="transaction_time" property="transactionTime" jdbcType="TIMESTAMP" />
+    <result column="transaction_type" property="transactionType" jdbcType="VARCHAR" />
+    <result column="transaction_amount" property="transactionAmount" jdbcType="DECIMAL" />
+    <result column="last_over" property="lastOver" jdbcType="DECIMAL" />
+    <result column="account_over" property="accountOver" jdbcType="DECIMAL" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+  </resultMap>
+</mapper>

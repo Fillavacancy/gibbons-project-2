@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gibbons.bank.mapper.ExpensesRecordMapper" >
+  <resultMap id="BaseResultMap" type="com.gibbons.bank.entity.ExpensesRecord" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="expenses_time" property="expensesTime" jdbcType="TIMESTAMP" />
+    <result column="expenses_type" property="expensesType" jdbcType="VARCHAR" />
+    <result column="expenses_amount" property="expensesAmount" jdbcType="DECIMAL" />
+    <result column="account_id" property="accountId" jdbcType="INTEGER" />
+    <result column="summary" property="summary" jdbcType="VARCHAR" />
+  </resultMap>
+</mapper>

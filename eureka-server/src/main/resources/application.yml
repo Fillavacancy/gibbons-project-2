@@ -1,0 +1,27 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: eureka-server
+
+eureka:
+  datacenter: cloud
+  environment: product
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 1000
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://user:password@192.168.0.17:9000/eureka/
+
+security:
+  basic:
+    enabled: true
+  user:
+    name: user
+    password: password
